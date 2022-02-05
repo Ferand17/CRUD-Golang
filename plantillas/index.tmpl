@@ -1,0 +1,27 @@
+{{ define "index" }}
+{{ template "cabecera" }}
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+      {{range.}}
+        <tr>
+          <td scope="row">{{.Id}}</td>
+          <td>{{.Nombre}}</td>
+          <td>{{.Correo}}</td>
+          <td>
+          <a name="" id="" class="btn btn-warning" href="/editar?id={{.Id}}" role="button">Editar</a> 
+          | 
+          <a name="" id="" class="btn btn-danger" href="/borrar?id={{.Id}}" role="button">Borrar</a></td>
+        </tr>
+      {{end}}
+      </tbody>
+    </table>
+{{ template "pie" }}
+{{ end }}
